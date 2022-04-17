@@ -18,12 +18,12 @@ OpenOCDRTT lets you send printf messages from your microcontroller to your PC wi
 #### Note:
 On a STM32 MCU, if you are putting the MCU to sleep when idle. you will need to add the following code or else OpenOCD will fail to read the memory.
 
-<code>
-__HAL_RCC_DMA1_CLK_ENABLE();
 
-HAL_DBGMCU_EnableDBGSleepMode();
+`__HAL_RCC_DMA1_CLK_ENABLE();`
 
-HAL_DBGMCU_EnableDBGStopMode();
-</code>
+`HAL_DBGMCU_EnableDBGSleepMode();`
+
+`HAL_DBGMCU_EnableDBGStopMode();`
+
 
 [RTT documentation from openocd](https://openocd.org/doc/html/General-Commands.html#Real-Time-Transfer-_0028RTT_0029)
