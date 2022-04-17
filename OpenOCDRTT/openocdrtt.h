@@ -38,9 +38,13 @@ struct OpenOCDRTT {
 void openOCDRTTInit();
 
 #ifdef __x86_64__
-int _write(int fd, const void * const buffer, const int bufferSize);
+int _write(int fd, const void* const buffer, const int bufferSize);
 // This is used by unit tests
 struct OpenOCDRTT* getRTTBuffer();
+#endif
+
+#ifdef __MBED__
+int rtt_write(int fd, const void* const buffer, const int bufferSize);
 #endif
 
 #ifdef __cplusplus

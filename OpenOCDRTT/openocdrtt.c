@@ -53,7 +53,11 @@ void openOCDRTTInit()
     __DSB();
 }
 
+#ifdef __MBED__
+int rtt_write(int fd, const void* const buffer, const int bufferSize)
+#else
 int _write(int fd, const void* const buffer, const int bufferSize)
+#endif
 {
     (void)fd;
     if (!bufferSize) {
